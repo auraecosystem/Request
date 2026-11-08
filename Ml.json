@@ -1,0 +1,39 @@
+{
+ "email@example.com": {
+   "githubaccount/repo": {
+      "events": ["issues.opened", "issues.closed", "issue_comment.created", "pull_request.opened", "pull_request.labeled"],
+      "eventFilter": {"label":["important"]},
+      "branches": {
+        "master": ["push"]
+      }
+   }
+  },
+ "email2@example.com": {
+   "http://www.w3.org/TR/wake-lock": {
+       "events": ["tr.published"]
+    }
+  },
+ "email3@example.com": {
+   "digest:tuesday": [
+     {
+       "repos": ["githubaccount/repo", "githubaccount/repo2"]
+     },
+     {
+       "repoList": "https://example.org/repos.json"
+     },
+     {
+       "topic": "All of repo4 and some of repo3", 
+       "sources": [
+           {
+             "repos": ["githubaccount/repo3"],
+             "eventFilter": {"label": ["enhancement"]}
+           },
+           {
+             "repos": ["githubaccount/repo4"]
+           }
+         ]
+     }
+   ]
+  }
+}
+
